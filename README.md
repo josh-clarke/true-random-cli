@@ -12,8 +12,8 @@ And it can also cast an _I Ching_ hexagram for you using the three coin method!
 
 ## Setup
 
-1. Make sure you have [node.js](https://nodejs.org) on your device
-2. Clone this repo to your device: `git clone https://github.com/josh-clarke/true-random-dice-roller`
+1. Make sure you have [node.js](https://nodejs.org) 
+2. Clone this repo: `git clone https://github.com/josh-clarke/true-random-dice-roller`
 3. Get a free [developer API key](https://api.random.org/dashboard) at Random.org
 4. Copy your API key into `config.yml.sample` and rename the file `config.yml`
 5. Install dependencies with `yarn` or `npm install`
@@ -35,9 +35,10 @@ The script takes one argument, which is your dice roll in the format `1d6+2`, wh
 
 **In addition to standard dice, there are two special rolls:**
 - **coin** - Initiates a simple heads-or-tails coin flip
-- **iching** - Casts an _I Ching_ hexagram using the three coin method (six sequences of three coin tosses, with heads weighing 3 and tails weighing 2). _I Ching_ mode also builds the hexagram visually and in the correct order in which the lines are cast<sup>[1](#threecoinmethod)</sup>. No definitions are offered, but a link is provided for you to look up your result. Note that a `--- x ---` is a changing yin line and a `----o----` is a changing yang line.
+- **iching** - Casts an _I Ching_ hexagram using the three coin method<sup>[1](#threecoinmethod)</sup>. _I Ching_ mode also builds the hexagram visually and in the correct order in which the lines are cast<sup>[2](#hexagrambuilding)</sup>. No definitions are offered, but a link is provided for you to look up your result. Note that a `--- x ---` is a changing yin line and a `----o----` is a changing yang line.
 
-1. <a name="threecoinmethod"></a> _When you generate a hexagram, the first line that you cast goes on the bottom and each successive line stacks on top. The final sixth line is at the top. Your hexagram rolls and the hexagram visualization are both shown in this order._
+1. <a name="threecoinmethod"></a> _The three coin method builds a hexagram through six sequences of three-coin tosses. Heads weigh 3 and tails weigh 2. The total of the line determines one of four lines: 6 = old yin (changing), 7 = young yang, 8 = young yin, 9 = old yang (changing). 
+2. <a name="hexagrambuilding"></a> _When you generate a hexagram, the first line that you cast goes on the bottom and each successive line stacks on top. The final sixth line is at the top. Your hexagram rolls and the hexagram visualization are both shown in this order._
 
 ### Example Ouput
 
