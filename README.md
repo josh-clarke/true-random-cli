@@ -20,9 +20,16 @@ And it can also cast an _I Ching_ hexagram for you using the three coin method!
 
 ## Usage
 
-Execute the script with `node roller.js [DICE OPTION]` inside the directory.
+Execute the script inside the directory with:
 
-The script takes one argument, which is your dice roll in the format `1d6+2`, where '1' is the number of dice, 'd6' is the size of the dice, and '+2' is a modifier to be added to the final total. You can also use a negative modifier, i.e., '-2'. 
+```cli
+node roller.js [DICE OPTION]
+``` 
+
+The script takes one argument, which is your dice roll in the format `1d6+2`, where:
+- `1` is the number of dice, 
+- `d6` is the size of the die, and 
+- `+2` is a modifier to be added to the final total. You can also use a negative modifier, i.e., `-2`. 
 
 **Available dice:**
 - **d4**
