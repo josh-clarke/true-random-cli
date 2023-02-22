@@ -6,7 +6,9 @@ A node.js script for generating dice rolls on the command line using true random
 
 Even though the psuedorandom number generators that come standard in most computer systems give pretty good relative randomness, as a developer it is always in the back of my mind that the results are deterministic. For dice rolls, I like the sense that I'm getting something more... _uncertain_. 
 
-The numbers for this dice roller (and I Ching hexagram caster) are fetched from Random.org which uses [atmospheric noise](https://www.random.org/randomness/) to create its non-deterministic true random numbers. 
+The numbers for this dice roller are fetched from Random.org which uses [atmospheric noise](https://www.random.org/randomness/) to create its non-deterministic true random numbers. 
+
+And it can also cast an _I Ching_ hexagram for you using the three coin method!
 
 ## Setup
 
@@ -32,8 +34,10 @@ The script takes one argument, which is your dice roll in the format `1d6+2`, wh
 - **d100**
 
 **In addition to standard dice, there are two special rolls:**
-- **coin** - Initiates a simple coin flip
-- **iching** - Casts an I Ching hexagram using the three coin method (six sequences of three coin tosses, with heads weighing 3 and tails weighing 2). I Ching mode also builds the hexagram visually and in the correct order in which the lines are cast (first line on the bottom up to the sixth line on the top). No definitions are offered, but a link is provided for you to look up your result. Note that a `--- x ---` is a changing yin line and a `----o----` is a changing yang line.
+- **coin** - Initiates a simple heads-or-tails coin flip
+- **iching** - Casts an _I Ching_ hexagram using the three coin method (six sequences of three coin tosses, with heads weighing 3 and tails weighing 2). _I Ching_ mode also builds the hexagram visually and in the correct order in which the lines are cast<sup>[1](#threecoinmethod)</sup>. No definitions are offered, but a link is provided for you to look up your result. Note that a `--- x ---` is a changing yin line and a `----o----` is a changing yang line.
+
+1. <a name="threecoinmethod"></a> _When you generate a hexagram, the first line that you cast goes on the bottom and each successive line stacks on top. The final sixth line is at the top. Your hexagram rolls and the hexagram visualization are both shown in this order._
 
 ### Example Ouput
 
