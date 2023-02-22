@@ -75,20 +75,20 @@ $ node roller.js iching
 Individual line rolls - bottom is first, top is sixth:
 
   3,3,2 (8)
-  2,3,2 (7)
-  3,2,2 (7)
   2,3,3 (8)
-  3,2,2 (7)
+  2,2,2 (6)
   2,3,3 (8)
+  2,2,2 (6)
+  3,3,3 (9)
    
 Here is your hexagram:
-  
+             
   ---   ---  
-  ---------  
-  ---------  
   ---   ---  
-  ---------  
+  --- x ---  
   ---   ---  
+  --- x ---  
+  ----o---- 
   
 Look up your hexagram here: https://www.jamesdekorne.com/GBCh/hexkey.htm
 ```
