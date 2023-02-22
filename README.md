@@ -52,6 +52,12 @@ Your roll of d4 resulted in 4.
 ```
 
 ```cli
+$ node roller.js 9d100 
+Your roll of 9d100 resulted in 463. 
+(Individual die rolls: 56,3,71,51,88,54,88,8,44)
+```
+
+```cli
 $ node roller.js coin
 Your coin landed heads up.
 ```
