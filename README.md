@@ -33,9 +33,9 @@ The script takes one argument, which is your dice roll in the format `1d6+2`, wh
 - **d20**
 - **d100**
 
-<a name="iching"></a>**In addition to standard dice, there are two special rolls:**
+**In addition to standard dice, there are two special rolls:**
 - **coin** - Initiates a simple heads-or-tails coin flip
-- **iching** - Casts an _I Ching_ hexagram using the three coin method<sup>[1](#threecoinmethod)</sup>. _I Ching_ mode also builds the hexagram visually and in the correct order in which the lines are cast<sup>[2](#hexagrambuilding)</sup>. No definitions are offered, but a link is provided for you to look up your result. Note that a `--- x ---` is a changing yin line and a `----o----` is a changing yang line.
+- <a name="iching"></a>**iching** - Casts an _I Ching_ hexagram using the three coin method<sup>[1](#threecoinmethod)</sup>. _I Ching_ mode also builds the hexagram visually and in the correct order in which the lines are cast<sup>[2](#hexagrambuilding)</sup>. No definitions are offered, but a link is provided for you to look up your result. Note that a `--- x ---` is a changing yin line and a `----o----` is a changing yang line.
 
 ### Example Ouput
 
