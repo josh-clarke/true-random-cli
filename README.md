@@ -78,6 +78,10 @@ Here is your hexagram:
 Look up your hexagram here: https://www.jamesdekorne.com/GBCh/hexkey.htm
 ```
 
+## Notes
+
+This is a simple straight-forward script. I may play with it in the future to teach myself how to make it into a module, rewrite it in TypeScript, or something I haven't thought of yet. I'm also open to your ideas and contributions if you have any!
+
 ## Credit and Gratitude
 
 This script is made possible by the brilliant work that went into developing and maintaining these node modules:

@@ -40,6 +40,10 @@ let dice = {
     min: 1,
     max: 20
   },
+  d100 : {
+    min: 1,
+    max: 100
+  },
   threeCoin : {
     length: 3,
     min: 2,
