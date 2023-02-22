@@ -99,23 +99,23 @@ function getCoinFlip() {
     flip.then(result => {
       let final = result.random.data[0]
       let side = final == 1 ? "heads" : (final == 2 ? "tails" : "uncertain")
-      console.log(`Your coin landed on `, chalk.bold(`${side}.`))
+      console.log(`Your coin landed`, chalk.bold(`${side}`), `up.`)
     })
 }
 
 function getDiceRoll(rollArgs) {
   let diceArgs    = rollArgs.split(/d|D/)
-  if(diceArgs.length == 1) diceArgs.unshift(1)
+  if(diceArgs[0] == '') diceArgs[0] = 1
   let diceRolls   = diceArgs[0]
   let diceModAdd  = diceArgs[1].search(/\+/) > -1 ? true : false
   let diceModSub  = diceArgs[1].search(/-/) > -1 ? true : false
   let die         = diceArgs[1].split(/\+|-/)
   let dieParams   = dice['d' + die[0]]
-    dieParams.n   = diceArgs[0]
+    dieParams.n   = diceRolls
   let roll        = getNumbers(dieParams)
     roll.then(result => {
       let final = result.random.data.reduce((a,b) => +a + +b) + (diceModAdd ? +die[1] : 0) + (diceModSub ? (+die[1] * -1) : 0)
-      console.log(`Your roll of `, chalk.bold(rollArgs), ` resulted in `, chalk.bold(`${final}.`), chalk.dim(`\n(Individual die rolls: ${result.random.data})`))
+      console.log(`Your roll of`, chalk.bold(rollArgs), `resulted in`, chalk.bold(`${final}.`), chalk.dim(`\n(Individual die rolls: ${result.random.data})`))
     })
 }
 
