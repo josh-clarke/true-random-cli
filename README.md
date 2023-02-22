@@ -1,2 +1,2 @@
-# true-random-cli
-A node.js CLI for generating truly random numbers from Random.org. 
+# true-random-dice-roller
+A node.js CLI for generating dice rolls using true random numbers from Random.org's API 

@@ -1,0 +1,15 @@
+{
+  "name": "true-random-dice-roller",
+  "version": "0.0.1",
+  "description": " A node.js CLI for generating dice rolls using true random numbers from Random.org's API",
+  "main": "roller.js",
+  "repository": "https://github.com/josh-clarke/true-random-dice-roller",
+  "author": "Joshua Clarke",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "chalk": "4",
+    "js-yaml": "^4.1.0",
+    "random-org": "^2.2.0"
+  }
+}

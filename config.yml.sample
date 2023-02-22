@@ -1,0 +1,4 @@
+--- 
+# Rename this file 'config.yml' and replace YOUR-RANDOM-ORG-API-KEY 
+# with your API key from Random.org
+apiKey: YOUR-RANDOM-ORG-API-KEY
