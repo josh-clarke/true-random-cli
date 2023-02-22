@@ -1,4 +1,4 @@
-# true-random-dice-roller
+# True Random Dice Roller
 
 A node.js script for generating dice rolls on the command line using true random numbers from Random.org's API.
 
