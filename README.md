@@ -29,7 +29,7 @@ node roller.js [DICE OPTION]
 The script takes one argument, which is your dice roll in the format `1d6+2`, where:
 - `1` is the number of dice, 
 - `d6` is the size of the die, and 
-- `+2` is a modifier to be added to the final total. You can also use a negative modifier, i.e., `-2`. 
+- `+2` is an _optional_ modifier to be added to the final total. You can also use a negative modifier, i.e., `-2`. 
 
 **Available dice:**
 - **d4**
