@@ -84,30 +84,25 @@ try {
 
 function getNumbers(params) {
   let randomNum = new RandomOrg({apiKey: configs.apiKey})
-
   return randomNum.generateIntegers(params)
-    //.then(result => result.random.data)
 }
 
 // Get sequences of random numbers 
 
 function getSequences(params) {
   let randomSeq = new RandomOrg({apiKey: configs.apiKey})
-
   return randomSeq.generateIntegerSequences(params)
-    //.then(result => result.random.data)
 }
 
-function getCoinFlip() {
-  let flip = getNumbers(DICE.coin)
-    flip.then(result => {
-      let final = result.random.data[0]
-      let side = final == 1 ? "heads" : (final == 2 ? "tails" : "uncertain")
-      console.log(`Your coin landed`, chalk.bold(`${side}`), `up.`)
-    })
+async function getCoinFlip() {
+  let flip = await getNumbers(DICE.coin)
+  console.log(flip)
+  let final = flip.random.data[0]
+  let side = final == 1 ? "heads" : (final == 2 ? "tails" : "uncertain")
+  console.log(`Your coin landed`, chalk.bold(`${side}`), `up.`)
 }
 
-function getDiceRoll(rollArgs) {
+async function getDiceRoll(rollArgs) {
   let diceArgs    = rollArgs.split(/d|D/)
   if(diceArgs[0] == '') diceArgs[0] = 1
   let diceRolls   = diceArgs[0]
@@ -116,20 +111,16 @@ function getDiceRoll(rollArgs) {
   let die         = diceArgs[1].split(/\+|-/)
   let dieParams   = DICE['d' + die[0]]
     dieParams.n   = diceRolls
-  let roll        = getNumbers(dieParams)
-    roll.then(result => {
-      let final = result.random.data.reduce((a,b) => +a + +b) + (diceModAdd ? +die[1] : 0) + (diceModSub ? (+die[1] * -1) : 0)
-      console.log(`Your roll of`, chalk.bold(rollArgs), `resulted in`, chalk.bold(`${final}.`), chalk.dim(`\n(Individual die rolls: ${result.random.data})`))
-    })
+  let roll        = await getNumbers(dieParams)
+  let final       = roll.random.data.reduce((a,b) => +a + +b) + (diceModAdd ? +die[1] : 0) + (diceModSub ? (+die[1] * -1) : 0)
+  console.log(`Your roll of`, chalk.bold(rollArgs), `resulted in`, chalk.bold(`${final}.`), chalk.dim(`\n(Individual die rolls: ${roll.random.data})`))
 }
 
-function getHex() {
-  let hexParams = dice.threeCoin
+async function getHex() {
+  let hexParams = DICE.threeCoin
     hexParams.n = 6
-  let hexRoll   = getSequences(hexParams)
-    hexRoll.then(result =>{
-      buildHex(result.random.data)
-    })
+  let hexRoll   = await getSequences(hexParams)
+  buildHex(hexRoll.random.data)
 }
 
 function buildHex(hexRoll) {
