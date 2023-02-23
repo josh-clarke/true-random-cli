@@ -10,7 +10,7 @@ let configs = {}                  // Object holding config.yml data
 
 // Setup dice parameters
 
-let dice = {
+const DICE = {
   coin : {
     n: 1,
     min: 1,
@@ -51,14 +51,14 @@ let dice = {
   }
 }
 
-let hexLines = {
+const HEXLINES = {
   '6':  '--- x ---',
   '7':  '---------',
   '8':  '---   ---',
   '9':  '----o----'
 }
 
-let helpText = `
+const HELP_TEXT = `
 Please include the die to throw in the format "1d6+2" where:
 
   - "1" is the number of die to throw
@@ -99,7 +99,7 @@ function getSequences(params) {
 }
 
 function getCoinFlip() {
-  let flip = getNumbers(dice.coin)
+  let flip = getNumbers(DICE.coin)
     flip.then(result => {
       let final = result.random.data[0]
       let side = final == 1 ? "heads" : (final == 2 ? "tails" : "uncertain")
@@ -114,7 +114,7 @@ function getDiceRoll(rollArgs) {
   let diceModAdd  = diceArgs[1].search(/\+/) > -1 ? true : false
   let diceModSub  = diceArgs[1].search(/-/) > -1 ? true : false
   let die         = diceArgs[1].split(/\+|-/)
-  let dieParams   = dice['d' + die[0]]
+  let dieParams   = DICE['d' + die[0]]
     dieParams.n   = diceRolls
   let roll        = getNumbers(dieParams)
     roll.then(result => {
@@ -138,7 +138,7 @@ function buildHex(hexRoll) {
   let hexGlyphs = []
   
   hexRoll.forEach(line => hexNums.unshift(line.reduce((a,b) => +a + +b)))
-  hexNums.forEach(line => hexGlyphs.push(hexLines[+line]))
+  hexNums.forEach(line => hexGlyphs.push(HEXLINES[+line]))
   console.log(chalk.dim(`
 Individual line rolls - bottom is first, top is sixth:
 
@@ -183,7 +183,7 @@ function rollDice(args) {
   }else if(checker.test(rollArgs)){
     getDiceRoll(rollArgs)
   }else{
-    console.log(helpText)
+    console.log(HELP_TEXT)
   }
 }
 
